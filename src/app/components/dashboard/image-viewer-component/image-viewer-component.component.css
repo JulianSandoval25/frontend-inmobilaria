@@ -1,0 +1,22 @@
+.image-viewer {
+    position: relative;
+}
+
+img {
+    object-fit: cover;
+    max-width: 100%;
+    border-radius: 50px 50px 0px 0px;
+    -webkit-border-radius: 50px 50px 0px 0px;
+    -moz-border-radius: 50px 50px 0px 0px;
+    -ms-border-radius: 50px 50px 0px 0px;
+    -o-border-radius: 50px 50px 0px 0px;
+}
+
+.nav-buttons {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+}

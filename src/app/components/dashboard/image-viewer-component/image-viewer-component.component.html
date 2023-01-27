@@ -1,0 +1,19 @@
+<div class="image-viewer">
+  <img [src]="currentImage" alt="Article image" width="700px" height="450px" />
+  <div class="nav-buttons">
+    <button
+      mat-icon-button
+      (click)="previousImage()"
+      [disabled]="currentIndex === 0"
+    >
+      <mat-icon>arrow_back_ios</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      (click)="nextImage()"
+      [disabled]="currentIndex === images.length - 1"
+    >
+      <mat-icon>arrow_forward_ios</mat-icon>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+.divmenu{
+    width: 100%;
+}
+
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.example-events {
+    width: 300px;
+    overflow: auto;
+    border: 1px solid #555;
+    background: #673ab7;
+}
+.lista{
+    width: 300px;
+}
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
+}
+.colorletras{
+    color:#fff;
+}

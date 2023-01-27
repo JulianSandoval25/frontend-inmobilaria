@@ -1,0 +1,92 @@
+<div class="body">
+  <div class="login" (paste)="pastePicture($event)">
+    <mat-spinner *ngIf="loading" class="spinner"></mat-spinner>
+    <form *ngIf="!loading" [formGroup]="form" (ngSubmit)="registrar()">
+      <img src="../../../assets/img/casa.png" width="50%" />
+      <h1>REGISTRO</h1>
+      <mat-form-field class="ancho">
+        <mat-label>Usuario</mat-label>
+        <input
+          matInput
+          placeholder="Usuario"
+          formControlName="usuario"
+          autocomplete="off"
+        />
+      </mat-form-field>
+      <mat-form-field class="ancho">
+        <mat-label>Mail</mat-label>
+        <input
+          matInput
+          placeholder="Mail"
+          formControlName="mail"
+          autocomplete="off"
+        />
+      </mat-form-field>
+      <mat-form-field class="ancho">
+        <mat-label>Telefono</mat-label>
+        <input
+          matInput
+          placeholder="Telefono"
+          formControlName="telefono"
+          autocomplete="off"
+        />
+      </mat-form-field>
+      <mat-form-field class="ancho">
+        <mat-label>DNI</mat-label>
+        <input
+          matInput
+          placeholder="DNI"
+          formControlName="dni"
+          autocomplete="off"
+        />
+      </mat-form-field>
+      <mat-form-field class="ancho">
+        <mat-label>Contraseña</mat-label>
+        <input
+          matInput
+          type="password"
+          placeholder="Contraseña"
+          formControlName="password"
+          autocomplete="off"
+        />
+      </mat-form-field>
+      <mat-form-field class="ancho">
+        <mat-label>Repetir Contraseña</mat-label>
+        <input
+          matInput
+          type="password"
+          placeholder="Repetir Contraseña"
+          formControlName="confirmarContra"
+          autocomplete="off"
+        />
+      </mat-form-field>
+      <button
+        class="file"
+        type="button"
+        mat-raised-button
+        (click)="fileInput.click()"
+      >
+        Subir Foto de Perfil
+      </button>
+      <input
+        hidden
+        (change)="onFileSelected($event)"
+        #fileInput
+        type="file"
+        class="file"
+      />
+      <br />
+      <img [src]="url" width="100px" *ngIf="bandfoto" />
+
+      <button
+        mat-raised-button
+        color="primary"
+        class="ancho button"
+        type="submit"
+        [disabled]="form.invalid"
+      >
+        Registrar
+      </button>
+    </form>
+  </div>
+</div>
