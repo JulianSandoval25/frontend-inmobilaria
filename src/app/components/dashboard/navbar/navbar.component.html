@@ -1,19 +1,29 @@
 <mat-sidenav-container class="example-container">
   <mat-sidenav #sidenav mode="over" [opened]="shouldRun" class="example-events">
     <mat-list-item class="lista">
-      <button mat-button color="accent" class="lista">
+      <button
+        mat-button
+        color="accent"
+        class="lista"
+        [routerLink]="['/dashboard/misPublicaciones']"
+      >
         <mat-icon mat-list-icon>book </mat-icon>
         <mat-label>Mis Publicaciones</mat-label>
       </button>
     </mat-list-item>
     <mat-list-item class="lista">
-      <button mat-button color="accent" class="lista">
+      <button
+        mat-button
+        color="accent"
+        class="lista"
+        [routerLink]="['/dashboard/configuracion']"
+      >
         <mat-icon mat-list-icon> settings </mat-icon>
         <mat-label>Configuración</mat-label>
       </button>
     </mat-list-item>
     <mat-list-item class="lista">
-      <button mat-button color="accent" class="lista">
+      <button mat-button color="accent" class="lista" [routerLink]="['/login']">
         <mat-icon mat-list-icon> logout </mat-icon>
         <mat-label>Logout</mat-label>
       </button>
@@ -24,7 +34,7 @@
     <button mat-icon-button (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <a href="dashboard" class="colorletras"> Inmobilaria </a>
+    <a [routerLink]="['/dashboard']" class="colorletras"> Inmobilaria </a>
 
     <div style="width: 100%"></div>
     <button mat-button [routerLink]="'search'">

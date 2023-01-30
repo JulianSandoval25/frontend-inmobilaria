@@ -15,6 +15,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { FormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [],
@@ -34,7 +35,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatGridListModule,
     FormsModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule
     
   ],
   exports: [
@@ -52,7 +54,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatGridListModule,
     FormsModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule
   ]
   
 })

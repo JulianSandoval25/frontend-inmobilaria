@@ -9,6 +9,9 @@ import { InicioComponent } from './inicio/inicio.component';
 import { ImageViewerComponentComponent } from './image-viewer-component/image-viewer-component.component';
 import { SearchComponent } from './search/search.component';
 import { FormModalComponent } from './form-modal/form-modal.component';
+import { DepartamentoDetalleComponent } from './departamento-detalle/departamento-detalle.component';
+import { MisPublicacionesComponent } from './mis-publicaciones/mis-publicaciones.component';
+import { ConfiguracionComponent } from './configuracion/configuracion.component';
 
 
 @NgModule({
@@ -18,7 +21,10 @@ import { FormModalComponent } from './form-modal/form-modal.component';
     InicioComponent,
     ImageViewerComponentComponent,
     SearchComponent,
-    FormModalComponent
+    FormModalComponent,
+    DepartamentoDetalleComponent,
+    MisPublicacionesComponent,
+    ConfiguracionComponent
   ],
   imports: [
     CommonModule,

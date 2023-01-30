@@ -11,6 +11,14 @@
         ></app-image-viewer-component>
         <h3>{{ item.titulo }}</h3>
         <p>{{ item.localidad }}</p>
+        <button
+          mat-raised-button
+          color="primary"
+          style="margin: 5px"
+          (click)="onDetalleClick(item.id)"
+        >
+          Ver Detalle
+        </button>
       </div>
     </mat-grid-tile>
   </mat-grid-list>

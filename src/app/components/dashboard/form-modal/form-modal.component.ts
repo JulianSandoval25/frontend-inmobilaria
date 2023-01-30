@@ -18,6 +18,7 @@ export class FormModalComponent {
     this.dialogRef.close();
   }
   onSubmit(){
+    this.data.id= this.departamentosService.items.length+1;
     console.log(this.data);
     this.departamentosService.items.push(this.data);
     this.dialogRef.close();
