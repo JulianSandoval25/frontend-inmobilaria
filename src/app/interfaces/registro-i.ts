@@ -1,8 +1,8 @@
 export interface RegistroI {
-    usuario:string;
+    //usuario:string;
     email:string;
     telefono:string;
-    dni:string
+    //dni:string;
     password:string;
     confirmarPassword:string;
 }

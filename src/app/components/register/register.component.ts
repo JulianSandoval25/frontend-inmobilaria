@@ -15,10 +15,10 @@ export class RegisterComponent {
   loading=false;
   constructor(private fb:FormBuilder, private _snackBar: MatSnackBar, private loginServicio: LoginService, private router: Router){
     this.form= this.fb.group({
-      usuario: ['', Validators.required],
+      //usuario: ['', Validators.required],
       mail: ['', Validators.required],
       telefono: ['', Validators.required],
-      dni: ['', Validators.required],
+      //dni: ['', Validators.required],
       password:['', Validators.required],
       confirmarContra:['', Validators.required]
     });
@@ -26,10 +26,10 @@ export class RegisterComponent {
   }
   registrar(){
     const usuarioRegistro: RegistroI={
-      usuario: this.form.value.usuario,
+      //usuario: this.form.value.usuario,
       email: this.form.value.mail,
       telefono: this.form.value.telefono,
-      dni: this.form.value.dni,
+      //dni: this.form.value.dni,
       password: this.form.value.password,
       confirmarPassword: this.form.value.confirmarContra
     };
@@ -38,6 +38,7 @@ export class RegisterComponent {
       this.loginServicio.register(usuarioRegistro).subscribe(res=>{
         console.log(res);
         this.openSnackBar('Registro correcto','cerrar');
+        this.fakeLoading();
       }, err=>{this.openSnackBar('registro Incorrecto','cerrar')})
     }else{
       this.openSnackBar('Contraseñas no coinciden','cerrar')

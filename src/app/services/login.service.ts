@@ -18,13 +18,13 @@ export class LoginService {
   ListaUsuarios:any;
   register(user: LoginI): Observable<ResponseRegistroI>{
     return this.http.post<ResponseRegistroI>(
-      'http://localhost:3000/register', user).pipe(tap((res:ResponseRegistroI)=>{
+      'http://localhost:3000/user', user).pipe(tap((res:ResponseRegistroI)=>{
         if(res){
           //guardar token
-          this.guardarToken(res.accessToken);
+          this.guardarToken(res.token);
         }
       }
-      ))
+    ))
   }
 
   //metodo para iniciar session
@@ -37,7 +37,7 @@ export class LoginService {
           console.log(this.conseguirToken());
         }
       }
-      ))
+    ))
   }
   //metodo para cerrar session
   logout(){

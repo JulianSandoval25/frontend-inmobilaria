@@ -28,10 +28,13 @@ export class LoginComponent {
     
     //login
     this.loginServicio.login(usuarioLogin).subscribe(res=>{
-      //console.log(res);
+      console.log(res);
       this.openSnackBar('Ingreso Correcto','cerrar');
       this.fakeLoading();
-    }, err=>{this.openSnackBar('Ingreso Incorrecto','cerrar')});
+    }, err=>{
+      this.openSnackBar('Ingreso Incorrecto','cerrar');
+      console.log(err)
+    });
   }
 
 
