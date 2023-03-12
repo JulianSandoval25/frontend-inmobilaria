@@ -33,6 +33,59 @@
   </mat-form-field>
 
   <input type="file" (change)="handleFileInput($event)" #fileInput multiple />
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="calle"
+      [(ngModel)]="departamento.calle"
+      name="calle"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="ciudad"
+      [(ngModel)]="departamento.ciudad"
+      name="ciudad"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="provincia"
+      [(ngModel)]="departamento.provincia"
+      name="provincia"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="pais"
+      [(ngModel)]="departamento.pais"
+      name="pais"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="codigo Postal"
+      [(ngModel)]="departamento.codigoPostal"
+      name="codigoPostal"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="tipo"
+      [(ngModel)]="departamento.tipo"
+      name="tipo"
+    />
+  </mat-form-field>
+  <input type="file" (change)="onFileSelected($event)" #fileInput multiple />
   <div>
     <button mat-raised-button (click)="onNoClick()">Cancelar</button>
     <button mat-raised-button (click)="onSubmit()">Enviar</button>

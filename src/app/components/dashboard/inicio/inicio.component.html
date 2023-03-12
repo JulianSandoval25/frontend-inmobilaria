@@ -9,13 +9,13 @@
         <app-image-viewer-component
           [images]="item.fotos"
         ></app-image-viewer-component>
-        <h3>{{ item.titulo }}</h3>
-        <p>{{ item.localidad }}</p>
+        <h3>{{ item.tipo }}</h3>
+        <p>{{ item.ciudad }}</p>
         <button
           mat-raised-button
           color="primary"
           style="margin: 5px"
-          (click)="onDetalleClick(item.id)"
+          (click)="onDetalleClick(item._id)"
         >
           Ver Detalle
         </button>
