@@ -1,43 +1,9 @@
-<form>
-  <mat-form-field>
-    <input
-      matInput
-      placeholder="Titulo"
-      [(ngModel)]="data.titulo"
-      name="titulo"
-    />
-  </mat-form-field>
-  <mat-form-field>
-    <input
-      matInput
-      placeholder="Localidad"
-      [(ngModel)]="data.localidad"
-      name="localidad"
-    />
-  </mat-form-field>
-  <mat-form-field>
-    <input
-      matInput
-      placeholder="telefono"
-      [(ngModel)]="data.telefono"
-      name="telefono"
-    />
-  </mat-form-field>
-  <mat-form-field>
-    <input
-      matInput
-      placeholder="Direccion"
-      [(ngModel)]="data.direccion"
-      name="direccion"
-    />
-  </mat-form-field>
-
-  <input type="file" (change)="handleFileInput($event)" #fileInput multiple />
-
+<form [formGroup]="form">
   <mat-form-field>
     <input
       matInput
       placeholder="calle"
+      formControlName="calle"
       [(ngModel)]="departamento.calle"
       name="calle"
     />
@@ -47,6 +13,7 @@
     <input
       matInput
       placeholder="ciudad"
+      formControlName="ciudad"
       [(ngModel)]="departamento.ciudad"
       name="ciudad"
     />
@@ -56,6 +23,7 @@
     <input
       matInput
       placeholder="provincia"
+      formControlName="provincia"
       [(ngModel)]="departamento.provincia"
       name="provincia"
     />
@@ -65,6 +33,7 @@
     <input
       matInput
       placeholder="pais"
+      formControlName="pais"
       [(ngModel)]="departamento.pais"
       name="pais"
     />
@@ -72,7 +41,8 @@
   <mat-form-field>
     <input
       matInput
-      placeholder="codigo Postal"
+      placeholder="Codigo Postal"
+      formControlName="codPostal"
       [(ngModel)]="departamento.codigoPostal"
       name="codigoPostal"
     />
@@ -81,13 +51,22 @@
     <input
       matInput
       placeholder="tipo"
+      formControlName="tipo"
       [(ngModel)]="departamento.tipo"
       name="tipo"
     />
   </mat-form-field>
-  <input type="file" (change)="onFileSelected($event)" #fileInput multiple />
+  <input
+    type="file"
+    (change)="onFileSelected($event)"
+    formControlName="archivo"
+    #fileInput
+    multiple
+  />
   <div>
     <button mat-raised-button (click)="onNoClick()">Cancelar</button>
-    <button mat-raised-button (click)="onSubmit()">Enviar</button>
+    <button mat-raised-button (click)="onSubmit()" [disabled]="form.invalid">
+      Enviar
+    </button>
   </div>
 </form>

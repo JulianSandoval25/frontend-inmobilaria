@@ -9,7 +9,11 @@ export class ImageViewerComponentComponent {
  @Input() images!: string[];
   currentIndex = 0;
   get currentImage() {
-    return this.images[this.currentIndex];
+    /* arreglar despues
+    return this.images[this.currentIndex]; */
+
+    let link= ("http://localhost:3000/"+this.images[this.currentIndex]).replace('/src', '');
+    return link;
   }
   previousImage() {
     if (this.currentIndex > 0) {

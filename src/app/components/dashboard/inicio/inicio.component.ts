@@ -19,7 +19,7 @@ export class InicioComponent {
     this.departamentosService.getDepartamentos().subscribe(res => {
       console.log(res.departamentos)
       this.items = res.departamentos;
-      console.log(this.items)
+      console.log(this.items[0].fotos)
       /* for (const item of this.items){
         console.log(item);
       } */
