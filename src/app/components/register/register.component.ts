@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { RegistroI } from 'src/app/interfaces/registro-i';
+import { UsuarioI } from 'src/app/interfaces/usuario-i';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -25,7 +25,7 @@ export class RegisterComponent {
 
   }
   registrar(){
-    const usuarioRegistro: RegistroI={
+    const usuarioRegistro: UsuarioI={
       //usuario: this.form.value.usuario,
       email: this.form.value.mail,
       telefono: this.form.value.telefono,

@@ -3,6 +3,7 @@ import { DepartamentoI } from './../../../interfaces/departamento-i';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FormModalComponent } from '../form-modal/form-modal.component';
+import { LoginService } from 'src/app/services/login.service';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { FormModalComponent } from '../form-modal/form-modal.component';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  constructor(public dialog: MatDialog){
+  constructor(public dialog: MatDialog, private loginServicio: LoginService){
 
   }
   opened!: boolean;
@@ -27,5 +28,8 @@ export class NavbarComponent {
     dialogRef.afterClosed().subscribe(result => {
       console.log('El modal ha sido cerrado');
     });
+  }
+  cerrarSession(){
+    this.loginServicio.logout();
   }
 }

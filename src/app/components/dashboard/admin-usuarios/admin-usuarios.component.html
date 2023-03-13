@@ -1,0 +1,33 @@
+<div class="toolbarTitulo">
+  <mat-toolbar style="background-color: #fff">
+    <span>Usuarios</span>
+  </mat-toolbar>
+
+  <table mat-table [dataSource]="this.items" class="mat-elevation-z8">
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Mail</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="telefono">
+      <th mat-header-cell *matHeaderCellDef>Telefono</th>
+      <td mat-cell *matCellDef="let element">{{ element.telefono }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="role">
+      <th mat-header-cell *matHeaderCellDef>Rol</th>
+      <td mat-cell *matCellDef="let element">{{ element.role }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Accion">
+      <th mat-header-cell *matHeaderCellDef>Accion</th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon mat-list-icon (click)="editar()"> edit </mat-icon>
+        <mat-icon mat-list-icon (click)="eliminar()"> delete </mat-icon>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

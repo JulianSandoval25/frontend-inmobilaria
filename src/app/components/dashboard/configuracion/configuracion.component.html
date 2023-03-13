@@ -6,13 +6,16 @@
     <mat-toolbar style="background-color: #fff">
       <span>Configuracion General</span>
     </mat-toolbar>
+
     <mat-form-field class="ancho">
       <mat-label>Mail</mat-label>
       <input
         matInput
         placeholder="Mail"
-        formControlName="mail"
         autocomplete="off"
+        [value]="mail"
+        name="mail"
+        [(ngModel)]="mail"
       />
     </mat-form-field>
     <mat-form-field class="ancho">
@@ -20,8 +23,10 @@
       <input
         matInput
         placeholder="Telefono"
-        formControlName="telefono"
         autocomplete="off"
+        [value]="telefono"
+        name="telefono"
+        [(ngModel)]="telefono"
       />
     </mat-form-field>
     <button
@@ -29,9 +34,11 @@
       color="primary"
       class="ancho button"
       type="submit"
+      (click)="guardarCambiosGenerales()"
     >
       Guardar Cambios
     </button>
+
     <mat-toolbar style="background-color: #fff">
       <span>Seguridad</span>
     </mat-toolbar>
@@ -41,6 +48,8 @@
         matInput
         type="password"
         placeholder="Cambiar Contraseña"
+        name="password"
+        [(ngModel)]="password"
         autocomplete="off"
       />
     </mat-form-field>
@@ -50,6 +59,8 @@
         matInput
         type="password"
         placeholder="Repetir Contraseña"
+        name="confirmPassword"
+        [(ngModel)]="confirmPassword"
         autocomplete="off"
       />
     </mat-form-field>
@@ -58,8 +69,31 @@
       color="primary"
       class="ancho button"
       type="submit"
+      (click)="cambiarPassword()"
     >
-      Guardar Cambios
+      Cambiar Contraseña
     </button>
+    <mat-toolbar style="background-color: #fff" (click)="eliminar()">
+      <span>Eliminar cuenta</span>
+    </mat-toolbar>
+    <div *ngIf="btnEliminar">
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        (click)="confirmar()"
+        style="margin-right: 5px"
+      >
+        Confirmar
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        (click)="cancelar()"
+      >
+        Cancelar
+      </button>
+    </div>
   </form>
 </div>

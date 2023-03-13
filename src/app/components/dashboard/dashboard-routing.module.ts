@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DepartamentoDetalleComponent } from './departamento-detalle/departamento-detalle.component';
+import { AdminUsuariosComponent } from './admin-usuarios/admin-usuarios.component';
 
 const routes: Routes = [
   {path:'',component:DashboardComponent, children:[
@@ -13,7 +14,8 @@ const routes: Routes = [
     {path: 'departamento/:id', component: DepartamentoDetalleComponent},
     {path: 'search', component:SearchComponent},
     {path: 'misPublicaciones', component:MisPublicacionesComponent},
-    {path: 'configuracion', component:ConfiguracionComponent}
+    {path: 'configuracion', component:ConfiguracionComponent},
+    {path: 'admin-usuarios', component:AdminUsuariosComponent}
 
   ]}
 ];

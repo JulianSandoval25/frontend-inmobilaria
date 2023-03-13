@@ -23,7 +23,25 @@
       </button>
     </mat-list-item>
     <mat-list-item class="lista">
-      <button mat-button color="accent" class="lista" [routerLink]="['/login']">
+      <button
+        mat-button
+        color="accent"
+        class="lista"
+        [routerLink]="['/dashboard/admin-usuarios']"
+      >
+        <mat-icon mat-list-icon> admin_panel_settings </mat-icon>
+        <mat-label>Admin</mat-label>
+      </button>
+    </mat-list-item>
+
+    <mat-list-item class="lista">
+      <button
+        mat-button
+        color="accent"
+        class="lista"
+        [routerLink]="['/login']"
+        (click)="cerrarSession()"
+      >
         <mat-icon mat-list-icon> logout </mat-icon>
         <mat-label>Logout</mat-label>
       </button>

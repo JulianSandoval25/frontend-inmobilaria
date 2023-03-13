@@ -12,6 +12,8 @@ import { FormModalComponent } from './form-modal/form-modal.component';
 import { DepartamentoDetalleComponent } from './departamento-detalle/departamento-detalle.component';
 import { MisPublicacionesComponent } from './mis-publicaciones/mis-publicaciones.component';
 import { ConfiguracionComponent } from './configuracion/configuracion.component';
+import { AdminUsuariosComponent } from './admin-usuarios/admin-usuarios.component';
+
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { ConfiguracionComponent } from './configuracion/configuracion.component'
     FormModalComponent,
     DepartamentoDetalleComponent,
     MisPublicacionesComponent,
-    ConfiguracionComponent
+    ConfiguracionComponent,
+    AdminUsuariosComponent,
   ],
   imports: [
     CommonModule,
