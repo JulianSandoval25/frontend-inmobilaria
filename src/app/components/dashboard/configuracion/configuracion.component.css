@@ -1,0 +1,9 @@
+form {
+    width: 80%;
+    /* ancho del formulario en porcentaje */
+    margin: 0 auto;
+    /* margen automático en los lados izquierdo y derecho */
+}
+.ancho{
+    width: 100%;
+}

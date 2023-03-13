@@ -1,1 +1,65 @@
-<p>configuracion works!</p>
+<div class="toolbarTitulo">
+  <mat-toolbar style="background-color: #fff">
+    <span>Configuracion</span>
+  </mat-toolbar>
+  <form>
+    <mat-toolbar style="background-color: #fff">
+      <span>Configuracion General</span>
+    </mat-toolbar>
+    <mat-form-field class="ancho">
+      <mat-label>Mail</mat-label>
+      <input
+        matInput
+        placeholder="Mail"
+        formControlName="mail"
+        autocomplete="off"
+      />
+    </mat-form-field>
+    <mat-form-field class="ancho">
+      <mat-label>Telefono</mat-label>
+      <input
+        matInput
+        placeholder="Telefono"
+        formControlName="telefono"
+        autocomplete="off"
+      />
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      class="ancho button"
+      type="submit"
+    >
+      Guardar Cambios
+    </button>
+    <mat-toolbar style="background-color: #fff">
+      <span>Seguridad</span>
+    </mat-toolbar>
+    <mat-form-field class="ancho">
+      <mat-label>Cambiar Contraseña</mat-label>
+      <input
+        matInput
+        type="password"
+        placeholder="Cambiar Contraseña"
+        autocomplete="off"
+      />
+    </mat-form-field>
+    <mat-form-field class="ancho">
+      <mat-label>Repetir Contraseña</mat-label>
+      <input
+        matInput
+        type="password"
+        placeholder="Repetir Contraseña"
+        autocomplete="off"
+      />
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      class="ancho button"
+      type="submit"
+    >
+      Guardar Cambios
+    </button>
+  </form>
+</div>

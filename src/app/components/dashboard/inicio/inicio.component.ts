@@ -13,7 +13,6 @@ export class InicioComponent {
   constructor(private departamentosService:DepartamentosService, private router: Router){
 
   }
-  //items: DepartamentoI[]=this.departamentosService.items;
   items:Departamento[]=[];
   ngOnInit() {
     this.departamentosService.getDepartamentos().subscribe(res => {
