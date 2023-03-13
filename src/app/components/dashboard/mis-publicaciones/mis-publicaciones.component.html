@@ -1,1 +1,24 @@
-<p>mis-publicaciones works!</p>
+<div class="toolbarTitulo">
+  <mat-toolbar style="background-color: #fff">
+    <span>Mis Publicaciones</span>
+  </mat-toolbar>
+  <mat-grid-list cols="2" rowHeight="" gutterSize="10px">
+    <mat-grid-tile *ngFor="let item of items" style="border-radius: 50px">
+      <div class="article-card">
+        <app-image-viewer-component
+          [images]="item.fotos"
+        ></app-image-viewer-component>
+        <h3>{{ item.tipo }}</h3>
+        <p>{{ item.ciudad }}</p>
+        <button
+          mat-raised-button
+          color="primary"
+          style="margin: 5px"
+          (click)="onDetalleClick(item._id)"
+        >
+          Ver Detalle
+        </button>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
