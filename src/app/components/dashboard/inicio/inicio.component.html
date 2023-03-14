@@ -1,15 +1,11 @@
 <div class="toolbarTitulo">
-  <!-- <mat-toolbar style="background-color: #fff159">
-    <span>Inicio</span>
-  </mat-toolbar> -->
   <mat-grid-list cols="2" rowHeight="" gutterSize="10px">
     <mat-grid-tile *ngFor="let item of items" style="border-radius: 50px">
       <div class="article-card">
-        <!-- <img [src]="item.fotos.foto1" alt="" width="700px" /> -->
         <app-image-viewer-component
           [images]="item.fotos"
         ></app-image-viewer-component>
-        <h3>{{ item.tipo }}</h3>
+        <h3>{{ item.tipo.toUpperCase() }}</h3>
         <p>{{ item.ciudad }}</p>
         <button
           mat-raised-button

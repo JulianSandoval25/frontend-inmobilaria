@@ -8,7 +8,7 @@
         <app-image-viewer-component
           [images]="item.fotos"
         ></app-image-viewer-component>
-        <h3>{{ item.tipo }}</h3>
+        <h3>{{ item.tipo.toUpperCase() }}</h3>
         <p>{{ item.ciudad }}</p>
         <button
           mat-raised-button
