@@ -1,14 +1,24 @@
 <div class="container">
   <mat-card class="card">
     <mat-card-header>
-      <mat-card-title>{{ departamento.tipo.toUpperCase() }}</mat-card-title>
-      <mat-card-subtitle>{{ departamento.ciudad }}</mat-card-subtitle>
+      <div style="display: flex; width: 100%">
+        <mat-card-title>{{ departamento.tipo.toUpperCase() }}</mat-card-title>
+        <div style="width: 100%"></div>
+        <mat-card-subtitle>{{ formattedDate }}</mat-card-subtitle>
+      </div>
     </mat-card-header>
     <app-galleria-imagenes [images]="departamento.fotos">
     </app-galleria-imagenes>
     <mat-card-content>
-      <p>{{ departamento.provincia }}</p>
-      <p>{{ departamento.pais }}</p>
+      <h1>Ciudad: {{ departamento.ciudad }}</h1>
+      <h1>Provincia: {{ departamento.provincia }}</h1>
+      <h1>Pais: {{ departamento.pais }}</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus
+        adipisci omnis asperiores officia quibusdam aliquid veritatis
+        dignissimos? Eum rem, neque quos deleniti obcaecati voluptas consectetur
+        animi consequatur officiis distinctio delectus!
+      </p>
     </mat-card-content>
     <mat-card-actions>
       <button mat-button>{{ departamento.tipo.toUpperCase() }}</button>

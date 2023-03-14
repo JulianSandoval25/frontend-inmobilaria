@@ -2,6 +2,7 @@ import { DepartamentosService } from './../../../services/departamentos.service'
 import { Component, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Departamento } from 'src/app/interfaces/departamentos-i';
+import { DatePipe } from '@angular/common';
 
 
 @Component({
@@ -14,11 +15,14 @@ export class DepartamentoDetalleComponent {
   }
   id!:string;
   departamento!: Departamento;
+  formattedDate: string='';
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id') || '';
     this.departamentosService.getDepartamento(this.id).subscribe(res=>{
       this.departamento= res.deparment
-      console.log(this.departamento.fotos)
+      if(this.departamento){
+        this.formattedDate = new DatePipe('en-US').transform(new Date(this.departamento.createdAt), 'yyyy-MM-dd HH:mm:ss') ?? "";
+      }
     })
   }
 }
