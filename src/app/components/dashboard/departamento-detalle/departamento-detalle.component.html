@@ -4,15 +4,8 @@
       <mat-card-title>{{ departamento.tipo }}</mat-card-title>
       <mat-card-subtitle>{{ departamento.ciudad }}</mat-card-subtitle>
     </mat-card-header>
-    <!-- <app-image-viewer-component
-      [images]="departamento.fotos"
-    ></app-image-viewer-component> -->
-    <img
-      *ngFor="let foto of departamento.fotos"
-      [src]="('http://localhost:3000/' + foto).replace('/src', '')"
-      alt=""
-      width="500px"
-    />
+    <app-galleria-imagenes [images]="departamento.fotos">
+    </app-galleria-imagenes>
     <mat-card-content>
       <p>{{ departamento.provincia }}</p>
       <p>{{ departamento.pais }}</p>

@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-image-viewer-component',
-  templateUrl: './image-viewer-component.component.html',
-  styleUrls: ['./image-viewer-component.component.css']
+  selector: 'app-galleria-imagenes',
+  templateUrl: './galleria-imagenes.component.html',
+  styleUrls: ['./galleria-imagenes.component.css']
 })
-export class ImageViewerComponentComponent {
+export class GalleriaImagenesComponent {
   @Input() images!: string[];
   currentIndex = 0;
   get currentImage() {

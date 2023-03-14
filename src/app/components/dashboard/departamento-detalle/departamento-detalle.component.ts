@@ -3,6 +3,7 @@ import { Component, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Departamento } from 'src/app/interfaces/departamentos-i';
 
+
 @Component({
   selector: 'app-departamento-detalle',
   templateUrl: './departamento-detalle.component.html',

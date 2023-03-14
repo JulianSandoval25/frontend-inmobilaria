@@ -1,0 +1,14 @@
+.image-viewer {
+    position: relative;
+}
+
+
+
+.nav-buttons {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+}

@@ -14,6 +14,7 @@ import { MisPublicacionesComponent } from './mis-publicaciones/mis-publicaciones
 import { ConfiguracionComponent } from './configuracion/configuracion.component';
 import { AdminUsuariosComponent } from './admin-usuarios/admin-usuarios.component';
 import { EditarUsuarioModalComponent } from './editar-usuario-modal/editar-usuario-modal.component';
+import { GalleriaImagenesComponent } from './galleria-imagenes/galleria-imagenes.component';
 
 
 
@@ -30,6 +31,7 @@ import { EditarUsuarioModalComponent } from './editar-usuario-modal/editar-usuar
     ConfiguracionComponent,
     AdminUsuariosComponent,
     EditarUsuarioModalComponent,
+    GalleriaImagenesComponent,
   ],
   imports: [
     CommonModule,
