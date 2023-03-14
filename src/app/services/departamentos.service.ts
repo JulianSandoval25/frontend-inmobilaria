@@ -63,6 +63,15 @@ export class DepartamentosService {
 
     return this.http.post('http://localhost:3000/department', formData, httpOptions)
   }
+
+  deleteDepartment(id:string){
+    const httpOptions = {
+    headers: new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem("ACCESS_TOKEN")}`
+    })
+    };
+     return this.http.delete<any>('http://localhost:3000/department/'+id, httpOptions);
+  }
   
 
 }

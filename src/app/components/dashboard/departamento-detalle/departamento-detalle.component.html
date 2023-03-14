@@ -5,6 +5,13 @@
         <mat-card-title>{{ departamento.tipo.toUpperCase() }}</mat-card-title>
         <div style="width: 100%"></div>
         <mat-card-subtitle>{{ formattedDate }}</mat-card-subtitle>
+        <button *ngIf="rolAdmin" mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="eliminar()">Eliminar</button>
+          <button mat-menu-item>Modificar</button>
+        </mat-menu>
       </div>
     </mat-card-header>
     <app-galleria-imagenes [images]="departamento.fotos">
