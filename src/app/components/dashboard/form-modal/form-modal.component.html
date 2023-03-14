@@ -1,4 +1,6 @@
-<form [formGroup]="form">
+<h1 mat-dialog-title>Publicar</h1>
+<h3>Datos</h3>
+<form [formGroup]="form" class="box">
   <mat-form-field>
     <input
       matInput
@@ -12,7 +14,7 @@
   <mat-form-field>
     <input
       matInput
-      placeholder="ciudad"
+      placeholder="Ciudad"
       formControlName="ciudad"
       [(ngModel)]="departamento.ciudad"
       name="ciudad"
@@ -22,7 +24,7 @@
   <mat-form-field>
     <input
       matInput
-      placeholder="provincia"
+      placeholder="Provincia"
       formControlName="provincia"
       [(ngModel)]="departamento.provincia"
       name="provincia"
@@ -32,7 +34,7 @@
   <mat-form-field>
     <input
       matInput
-      placeholder="pais"
+      placeholder="Pais"
       formControlName="pais"
       [(ngModel)]="departamento.pais"
       name="pais"
@@ -47,14 +49,13 @@
       name="codigoPostal"
     />
   </mat-form-field>
-  <mat-form-field>
-    <input
-      matInput
-      placeholder="tipo"
-      formControlName="tipo"
-      [(ngModel)]="departamento.tipo"
-      name="tipo"
-    />
+  <mat-form-field appearance="fill">
+    <mat-label>Tipo</mat-label>
+    <mat-select [(ngModel)]="selectedTipo" formControlName="tipo">
+      <mat-option *ngFor="let tipo of tipos" [value]="tipo.value">
+        {{ tipo.viewValue }}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
   <input
     type="file"

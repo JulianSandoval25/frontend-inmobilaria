@@ -13,6 +13,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class FormModalComponent {
   form:FormGroup;
   mensaje: string='';
+  
+  
   constructor(private dialogRef: MatDialogRef<FormModalComponent>, 
     @Inject(MAT_DIALOG_DATA) public departamento: DepartamentoCreate,
     private departamentosService:DepartamentosService, private fb: FormBuilder) {
@@ -22,17 +24,22 @@ export class FormModalComponent {
         provincia:['', Validators.required],
         pais:['', Validators.required],
         codPostal:['', Validators.required],
-        tipo:['', Validators.required],
+        tipo: [''],
         archivo: [null, Validators.required]
       });
       
     }
   
-  
+  tipos: any[] = [
+    {value: 'alquiler', viewValue: 'Alquiler'},
+    {value: 'venta', viewValue: 'Venta'}
+  ];
+  selectedTipo: string = '';
   onNoClick(): void {
     this.dialogRef.close();
   }
   onSubmit(){
+    this.departamento.tipo=this.selectedTipo;
     this.departamentosService.crearDepartamento(this.departamento, this.selectedFiles).subscribe(
       (respuesta: any) => {
         this.mensaje = respuesta.mensaje;

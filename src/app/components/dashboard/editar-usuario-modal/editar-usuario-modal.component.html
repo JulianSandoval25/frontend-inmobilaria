@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>Editar Usuario</h1>
+<div class="box">
+  <mat-form-field>
+    <mat-label>Mail</mat-label>
+    <input matInput placeholder="Mail" [(ngModel)]="data.email" name="mail" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Telefono</mat-label>
+    <input
+      matInput
+      placeholder="Telefono"
+      [(ngModel)]="data.telefono"
+      name="telefeno"
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Rol</mat-label>
+    <mat-select [(ngModel)]="selectedRole">
+      <mat-option *ngFor="let rol of roles" [value]="rol.value">
+        {{ rol.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <div style="text-align: right">
+    <div></div>
+    <button mat-button (click)="confirm()">Confirmar</button>
+    <button mat-button (click)="close()">Cancelar</button>
+  </div>
+</div>

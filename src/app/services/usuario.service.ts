@@ -24,6 +24,14 @@ export class UsuarioService {
     };
      return this.http.put<any>('http://localhost:3000/user', data, httpOptions);
   }
+  updateUsuarioById(id: string, data: any){
+    const httpOptions = {
+    headers: new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem("ACCESS_TOKEN")}`
+    })
+    };
+     return this.http.put<any>('http://localhost:3000/userid/'+id, data, httpOptions);
+  }
 
 
   deleteUsuario(id:string){

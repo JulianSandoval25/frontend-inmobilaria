@@ -13,6 +13,7 @@ import { DepartamentoDetalleComponent } from './departamento-detalle/departament
 import { MisPublicacionesComponent } from './mis-publicaciones/mis-publicaciones.component';
 import { ConfiguracionComponent } from './configuracion/configuracion.component';
 import { AdminUsuariosComponent } from './admin-usuarios/admin-usuarios.component';
+import { EditarUsuarioModalComponent } from './editar-usuario-modal/editar-usuario-modal.component';
 
 
 
@@ -28,6 +29,7 @@ import { AdminUsuariosComponent } from './admin-usuarios/admin-usuarios.componen
     MisPublicacionesComponent,
     ConfiguracionComponent,
     AdminUsuariosComponent,
+    EditarUsuarioModalComponent,
   ],
   imports: [
     CommonModule,
