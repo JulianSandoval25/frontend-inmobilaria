@@ -1,11 +1,12 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
-
+  apiUrl = environment.apiUrl;
   constructor(private http:HttpClient) { }
 
   getUsuario(){
@@ -14,7 +15,7 @@ export class UsuarioService {
       'Authorization': `Bearer ${localStorage.getItem("ACCESS_TOKEN")}`
     })
     };
-    return this.http.get<any>('http://localhost:3000/user', httpOptions);
+    return this.http.get<any>(this.apiUrl+'user', httpOptions);
   }
   updateUsuario(data: any){
     const httpOptions = {
@@ -22,7 +23,7 @@ export class UsuarioService {
       'Authorization': `Bearer ${localStorage.getItem("ACCESS_TOKEN")}`
     })
     };
-     return this.http.put<any>('http://localhost:3000/user', data, httpOptions);
+     return this.http.put<any>(this.apiUrl+'user', data, httpOptions);
   }
   updateUsuarioById(id: string, data: any){
     const httpOptions = {
@@ -30,7 +31,7 @@ export class UsuarioService {
       'Authorization': `Bearer ${localStorage.getItem("ACCESS_TOKEN")}`
     })
     };
-     return this.http.put<any>('http://localhost:3000/userid/'+id, data, httpOptions);
+     return this.http.put<any>(this.apiUrl+'userid/'+id, data, httpOptions);
   }
 
 
@@ -40,7 +41,7 @@ export class UsuarioService {
       'Authorization': `Bearer ${localStorage.getItem("ACCESS_TOKEN")}`
     })
     };
-     return this.http.delete<any>('http://localhost:3000/user/'+id, httpOptions);
+     return this.http.delete<any>(this.apiUrl+'user/'+id, httpOptions);
   }
 
   getUsuarios(){
@@ -49,6 +50,6 @@ export class UsuarioService {
       'Authorization': `Bearer ${localStorage.getItem("ACCESS_TOKEN")}`
     })
     };
-    return this.http.get<any>('http://localhost:3000/users', httpOptions);
+    return this.http.get<any>(this.apiUrl+'users', httpOptions);
   }
 }

@@ -32,11 +32,14 @@ export class DepartamentoDetalleComponent {
       this.departamento= res.deparment
       if(res.deparment.propietario._id==this.idusuario){
         this.rolAdmin=true;
-      }
-      
+      }      
       if(this.departamento){
         this.formattedDate = new DatePipe('en-US').transform(new Date(this.departamento.createdAt), 'yyyy-MM-dd HH:mm:ss') ?? "";
       }
+    },
+    err=>{
+        //poner ruta para pagina de error
+        this.router.navigate(['dashboard']);
     })
   }
 
@@ -46,6 +49,10 @@ export class DepartamentoDetalleComponent {
       this.departamentosService.deleteDepartment(this.departamento._id).subscribe(
         res=>{
           
+          this.router.navigate(['dashboard']);
+        },
+        err=>{
+          //poner ruta para pagina de error
           this.router.navigate(['dashboard']);
         }
       )

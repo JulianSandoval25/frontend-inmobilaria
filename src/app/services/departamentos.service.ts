@@ -2,14 +2,16 @@ import { DepartamentoCreate } from './../interfaces/departamentos-i';
 import { DepartamentoI } from './../interfaces/departamento-i';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BehaviorSubject, catchError, Observable, tap } from 'rxjs';
-import { Departamento } from '../interfaces/departamentos-i';
+import { environment } from '../../environments/environment';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class DepartamentosService {
   items: DepartamentoI[]=[]
+  apiUrl = environment.apiUrl;
   constructor(private http:HttpClient) { }
 
   getDepartamento(id:string){
@@ -18,7 +20,7 @@ export class DepartamentosService {
       'Authorization': `Bearer ${localStorage.getItem("ACCESS_TOKEN")}`
     })
     };
-    return this.http.get<any>('http://localhost:3000/department/'+id, httpOptions);
+    return this.http.get<any>(this.apiUrl+'department/'+id, httpOptions);
   }
 
   departamentos:any;
@@ -28,7 +30,7 @@ export class DepartamentosService {
       'Authorization': `Bearer ${localStorage.getItem("ACCESS_TOKEN")}`
     })
     };
-    return this.http.get<any>('http://localhost:3000/department?page=1', httpOptions);
+    return this.http.get<any>(this.apiUrl+'department?page=1', httpOptions);
   }
 
   getMisDepartamentos(){
@@ -37,7 +39,7 @@ export class DepartamentosService {
       'Authorization': `Bearer ${localStorage.getItem("ACCESS_TOKEN")}`
     })
     };
-    return this.http.get<any>('http://localhost:3000/departmentpropietario', httpOptions);
+    return this.http.get<any>(this.apiUrl+'departmentpropietario', httpOptions);
   }
 
   crearDepartamento(departamento:DepartamentoCreate, imagenes: FileList){
@@ -61,7 +63,7 @@ export class DepartamentosService {
     }
     console.log(formData.get('fotos'))
 
-    return this.http.post('http://localhost:3000/department', formData, httpOptions)
+    return this.http.post(this.apiUrl+'department', formData, httpOptions)
   }
 
   deleteDepartment(id:string){
@@ -70,7 +72,7 @@ export class DepartamentosService {
       'Authorization': `Bearer ${localStorage.getItem("ACCESS_TOKEN")}`
     })
     };
-     return this.http.delete<any>('http://localhost:3000/department/'+id, httpOptions);
+     return this.http.delete<any>(this.apiUrl+'department/'+id, httpOptions);
   }
   
 
