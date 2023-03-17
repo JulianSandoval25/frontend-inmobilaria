@@ -25,7 +25,7 @@ export class ReservaModalComponent {
     let dataReserva={
       usuario:this.data.idUsuario,
       propiedad: this.data.idPropiedad,
-      //fecha: this.fechaSeleccionada,
+      fecha: this.fechaSeleccionada,
       hora: this.horaSeleccionada
     }
     this.reservaService.crearReserva(dataReserva).subscribe(
