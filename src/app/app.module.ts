@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './components/shared/shared.module';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { LOCALE_ID } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { RegisterComponent } from './components/register/register.component';
     BrowserAnimationsModule,
     SharedModule
   ],
-  providers: [],
+  providers: [ {provide: LOCALE_ID, useValue: 'es'},],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

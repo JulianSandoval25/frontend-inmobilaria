@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>Reservar Visita</h1>
+<div class="box">
+  <mat-form-field>
+    <mat-label>Elegir dia</mat-label>
+    <input
+      matInput
+      [matDatepicker]="picker"
+      (dateChange)="onDateChange($event)"
+    />
+    <mat-hint>DD/MM/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker touchUi #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Elegir hora</mat-label>
+    <input
+      matInput
+      type="time"
+      placeholder="Hora"
+      (change)="onTimeChange($event)"
+    />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <div style="text-align: right">
+    <div></div>
+    <button mat-button (click)="confirm()">Confirmar</button>
+    <button mat-button (click)="close()">Cancelar</button>
+  </div>
+</div>

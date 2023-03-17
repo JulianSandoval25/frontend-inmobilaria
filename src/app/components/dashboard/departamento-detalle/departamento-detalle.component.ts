@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Departamento } from 'src/app/interfaces/departamentos-i';
 import { DatePipe } from '@angular/common';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog'
+import { ReservaModalComponent } from '../reserva-modal/reserva-modal.component';
 
 
 @Component({
@@ -15,7 +17,8 @@ export class DepartamentoDetalleComponent {
   constructor(private route: ActivatedRoute, 
     private departamentosService:DepartamentosService, 
     private usuarioService:UsuarioService,
-    private router: Router){
+    private router: Router,
+    private dialog: MatDialog){
   }
   id!:string;
   departamento!: Departamento;
@@ -57,6 +60,13 @@ export class DepartamentoDetalleComponent {
         }
       )
     }
-    
+  }
+
+  reservarVisita(){
+    const data={
+      idUsuario: this.idusuario,
+      idPropiedad: this.departamento._id
+    }
+    const dialogRef = this.dialog.open(ReservaModalComponent,{ data: data});
   }
 }
