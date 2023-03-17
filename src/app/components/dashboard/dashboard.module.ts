@@ -16,6 +16,7 @@ import { AdminUsuariosComponent } from './admin-usuarios/admin-usuarios.componen
 import { EditarUsuarioModalComponent } from './editar-usuario-modal/editar-usuario-modal.component';
 import { GalleriaImagenesComponent } from './galleria-imagenes/galleria-imagenes.component';
 import { ReservaModalComponent } from './reserva-modal/reserva-modal.component';
+import { MisReservasComponent } from './mis-reservas/mis-reservas.component';
 
 
 
@@ -34,6 +35,7 @@ import { ReservaModalComponent } from './reserva-modal/reserva-modal.component';
     EditarUsuarioModalComponent,
     GalleriaImagenesComponent,
     ReservaModalComponent,
+    MisReservasComponent,
   ],
   imports: [
     CommonModule,
