@@ -13,6 +13,7 @@ export class MisReservasComponent {
 
   displayedColumns: string[] = ['email', 'calle', 'ciudad', 'fecha', 'hora', 'Accion'];
   items!:Reserva[];
+  itemsUsuario!:Reserva[];
   data:any;
   constructor(private reservaService:ReservaService, private _snackBar: MatSnackBar, private router: Router){
     
@@ -22,6 +23,14 @@ export class MisReservasComponent {
     this.reservaService.getReservas().subscribe(
       res=>{
         this.items= res.reservasPropietario
+      },
+      err=>{
+        this.openSnackBar('Error al obtener reservas', 'Cerrar')
+      }
+    )
+    this.reservaService.getReservasUsuarios().subscribe(
+      res=>{
+        this.itemsUsuario= res.reservas;
       },
       err=>{
         this.openSnackBar('Error al obtener reservas', 'Cerrar')

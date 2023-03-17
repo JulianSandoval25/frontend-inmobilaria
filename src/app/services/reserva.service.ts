@@ -28,6 +28,15 @@ export class ReservaService {
     return this.http.get<any>(this.apiUrl+'reservapropietario', httpOptions)
   }
 
+  getReservasUsuarios(){
+    const httpOptions = {
+    headers: new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem("ACCESS_TOKEN")}`
+      })
+    };
+    return this.http.get<any>(this.apiUrl+'reservausuario', httpOptions)
+  }
+
   deleteReserva(id:string){
     const httpOptions = {
     headers: new HttpHeaders({
