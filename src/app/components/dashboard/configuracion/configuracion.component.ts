@@ -50,6 +50,19 @@ export class ConfiguracionComponent {
   }
   cambiarPassword(){
     if(this.password==this.confirmPassword){
+      let data:any;
+      data={
+        password:this.password
+      }
+      console.log(data)
+      this.usuarioService.updateUsuarioPassword(data).subscribe(
+        res=>{
+          this.openSnackBar(res.message,'cerrar')
+        },
+        err=>{
+          this.openSnackBar(err.error.message,'cerrar')
+        }
+      )
     }else{
       this.openSnackBar('Contraseñas no coinciden','cerrar')
     }

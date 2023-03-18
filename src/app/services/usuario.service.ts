@@ -34,6 +34,15 @@ export class UsuarioService {
      return this.http.put<any>(this.apiUrl+'userid/'+id, data, httpOptions);
   }
 
+  updateUsuarioPassword(data: any){
+    const httpOptions = {
+    headers: new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem("ACCESS_TOKEN")}`
+    })
+    };
+     return this.http.put<any>(this.apiUrl+'userpassword', data, httpOptions);
+  }
+
 
   deleteUsuario(id:string){
     const httpOptions = {
